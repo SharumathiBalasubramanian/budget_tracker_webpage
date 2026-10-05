@@ -51,15 +51,6 @@ app.use(
 // Body parser
 app.use(express.json());
 
-// -------------------------------------------------------------
-// Path Normalizer Middleware
-// Collapses consecutive slashes (e.g., //insights/gemini -> /insights/gemini)
-// -------------------------------------------------------------
-app.use((req, res, next) => {
-  req.url = req.url.replace(/\/+/g, '/');
-  next();
-});
-
 // Apply rate limiter specifically to auth endpoints (both paths)
 app.use(['/api/auth', '/auth'], authLimiter);
 

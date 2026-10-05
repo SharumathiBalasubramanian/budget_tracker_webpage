@@ -3,7 +3,7 @@ const { GoogleGenAI } = require("@google/genai");
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
-
+//https://budgettrackerbackend-k1n0.onrender.com/
 const generateContent = async (prompt) => {
   try {
     const response = await ai.models.generateContent({
